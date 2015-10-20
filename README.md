@@ -1,27 +1,30 @@
 # cloud
 Python,Auto Test,Linux,Hexo
 ## git练习：
-在windows上创建git仓库
-> mkdir filename创建目录，在进入目录初始化
-> git init 初始化git仓库
-> git add readme.md 添加文件
-> git commit -m "wrote a readme file"  提交文件
-> git status 查看仓库状态
-> git diff readme.txt 查看文件修改内容
-> git clone 克隆仓库
-
-**查看远程仓库相关命令**
+git add README.md 修改文件  
+git commit -m '备注文字' 提交本地  
+git push推送到github  
+在windows上创建git仓库  
+> mkdir filename创建目录，在进入目录初始化  
+> git init 初始化git仓库  
+> git add readme.md 添加文件  
+> git commit -m "wrote a readme file"  提交文件  
+> git status 查看仓库状态  
+> git diff readme.txt 查看文件修改内容  
+> git clone 克隆仓库  
+  
+**查看远程仓库相关命令**  
 - 检出仓库：$ git clone git://github.com/jquery/jquery.git
 - 查看远程仓库：$ git remote -v
 - 添加远程仓库：$ git remote add [name] [url]
 - 删除远程仓库：$ git remote rm [name]
 - 修改远程仓库：$ git remote set-url --push [name] [newUrl]
-- 拉取远程仓库：$ git pull [remoteName] [localBranchName]
-- 推送远程仓库：$ git push [remoteName] [localBranchName]
-**推送到远程**
-```如果想把本地的某个分支test提交到远程的仓库，并作为远程仓库的master分支，或者作为另外一个名叫test的分支，如下···
-$git push origin test:master         // 提交本地test分支作为远程的master分支
-$git push origin test:test              // 提交本地test分支作为远程的test分支
+- 拉取远程仓库：$ git pull [remoteName] [localBranchName]  
+- 推送远程仓库：$ git push [remoteName] [localBranchName]  
+**推送到远程**  
+如果想把本地的某个分支test提交到远程的仓库，并作为远程仓库的master分支，或者作为另外一个名叫test的分支，如下  
+$git push origin test:master         // 提交本地test分支作为远程的master分支  
+$git push origin test:test              // 提交本地test分支作为远程的test分支  
 
 
 2）分支(branch)操作相关命令
