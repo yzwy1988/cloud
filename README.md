@@ -12,6 +12,7 @@ git push推送到github
 > git status 查看仓库状态  
 > git diff readme.txt 查看文件修改内容  
 > git clone 克隆仓库  
+> ## git push -u origin master 推送到远程**
   
 **查看远程仓库相关命令**  
 - 检出仓库：$ git clone git://github.com/jquery/jquery.git
