@@ -42,9 +42,8 @@ f.write("this is the 3 line\n")
 f.write("this is the 4 line\n")
 f.close()
 
-
 # 读取文件,模式为r
-f = open('test.log','r')
+f = open('test.log', 'r')
 for line in f:
     if "5" in line:
         print("this is the third line")
@@ -52,21 +51,19 @@ for line in f:
         print(line),
 f.close()
 
-
 # 写入文件,用于追加 a模式
 # 写的模式下读取也会报错
-f = open("test.log","a")
+f = open("test.log", "a")
 f.write("hello")
 f.close()
 # 在读取
-f = open("test.log",'r')
+f = open("test.log", 'r')
 print(f.read())
 f.close()
 
-
 # 写读模式
 # 写读会把原来的内容清掉
-f = open("test.log","w+")
+f = open("test.log", "w+")
 f.write("new line\n")
 print(f.readline())
 f.close()

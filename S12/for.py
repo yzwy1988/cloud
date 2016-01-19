@@ -4,8 +4,6 @@
 lucky_num = 19
 input_num = -1
 
-
-
 for i in range(3):
     input_num = int(input("Input the guess num:"))
     if input_num > lucky_num:

@@ -21,7 +21,7 @@ print(name_list)
 # pop删除最后一个
 name_list.pop()
 print(name_list) \
-# remove指定删除，要指定值
+    # remove指定删除，要指定值
 name_list.remove('88')
 print(name_list)
 # 反转排序
@@ -39,15 +39,15 @@ for i in range(name_list.count('alex')):
     name_list.remove("alex")
     print(name_list)
 # 切片
-a =[1,2,3,'a','b']
+a = [1, 2, 3, 'a', 'b']
 # 切除1-2的要定位到3
 print(a[0:3])
 a.insert(2, 4)
 print(a)
-a.insert(5,5)
+a.insert(5, 5)
 print(a)
 print(a[0:2])
-b =[1,2,3,'a','b']
+b = [1, 2, 3, 'a', 'b']
 # 去最后一个
 print(b[-1])
 # 取前三个
@@ -58,7 +58,7 @@ c = b[0:3]
 print(c)
 
 # 扩展
-print(a + b +c)
+print(a + b + c)
 # 或者a.extend(b)
 print(a.extend(b))
 name = "shen"
@@ -69,7 +69,6 @@ print(a.extend(name))
 print('bs' in a)
 
 # 元祖
-t =(1,2,3,4)
+t = (1, 2, 3, 4)
 # 元祖转换列表
 print(list(t))
-
