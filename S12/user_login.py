@@ -8,7 +8,7 @@
 
 # 定义用户名密码初始值
 user = "zhangsan"
-passwd = "123"
+passwd = "888"
 
 # login_count = 0
 
@@ -37,4 +37,3 @@ while True:
         print(r"用户被锁定")
         break
     break
-
