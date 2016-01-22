@@ -1,0 +1,16 @@
+test_bad_int (__main__.TestConversion) ... ok
+test_bad_int_msg (__main__.TestConversion) ... ERROR
+test_file_not_found (__main__.TestIO) ... ok
+
+======================================================================
+ERROR: test_bad_int_msg (__main__.TestConversion)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\PCPC\Desktop\python-cookbook-master\python-cookbook-master\src\14\logging_test_output_to_a_file\test.py", line 14, in test_bad_int_msg
+    self.assertRaisesRegex(ValueError, 'invalid literal .*', parse_int, 'N/A')
+AttributeError: 'TestConversion' object has no attribute 'assertRaisesRegex'
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (errors=1)
