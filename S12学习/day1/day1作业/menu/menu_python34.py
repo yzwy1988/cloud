@@ -1,7 +1,7 @@
 #!/usr/bin/python34
-import sys,os,re,yaml,time
-#reload(sys)
-#sys.setdefaultencoding('utf-8')  
+import sys, os, re, yaml, time
+# reload(sys)
+# sys.setdefaultencoding('utf-8')
 
 ######################对input输入字符类型判断并转化#####################
 def input_handle(s):
@@ -63,27 +63,27 @@ def province_show(province_list):
     global FLAG_M
 
     province_dict = {}            
-    ############对省份或直辖市列表参数进行遍历并加上数字编号############### 
-    for k,v in enumerate(province_list,1):
+    # ###########对省份或直辖市列表参数进行遍历并加上数字编号###############
+    for k,v in enumerate(province_list,1):        # enumerate 函数用于遍历序列中的元素以及它们的下标
             province_dict[k] = v
-            print('%d . %s' % (k,v) + '\t',end='')       ###加上end参数，取消默认换行###
-            if k % 4 == 0:                               ###按4列换行###
+            print('%d . %s' % (k,v) + '\t',end='')       # ##加上end参数，取消默认换行###
+            if k % 4 == 0:                               # ##按4列换行###
                 print()
     print('\n================================================================')
     print('q : Exit')
 
-    ###############键盘读入编号或省份，可以输入汉字#################
+    # ##############键盘读入编号或省份，可以输入汉字#################
     province_index = input('请输入编号或省份 : ')
 
-    ###############如果输入非空，对输入进行判断并转化类型###########
+    # ##############如果输入非空，对输入进行判断并转化类型###########
     if len(province_index) != 0:
         province_index = input_handle(province_index)
 
-    if province_index == 'q':                            ###如果输入为q,则退出程序###
+    if province_index == 'q':                            # #如果输入为q,则退出程序###
         sys.exit(0)     
-    elif province_index in province_dict.keys():         ###如果输入为数字编号，则从字典中获取具体省份或直辖市名称###
-        P_NAME = province_dict[province_index]           ###对全局变量赋值省份名称###
-    elif province_index in province_dict.values():       ###如果输入为具体省份，则从字典中获取具体省份或直辖市名称###
+    elif province_index in province_dict.keys():         # ##如果输入为数字编号，则从字典中获取具体省份或直辖市名称###
+        P_NAME = province_dict[province_index]           # ##对全局变量赋值省份名称###
+    elif province_index in province_dict.values():       # ##如果输入为具体省份，则从字典中获取具体省份或直辖市名称###
         P_NAME = province_index                          ###对全局变量赋值省份名称###
     else:
         P_NAME = ''                                      ###输入其他字符，赋值全局变量为空### 
@@ -231,7 +231,7 @@ def county_show(province_name,city_name,county_list):
 ##########################################主程序###############################
 
 ###############读取yaml格式文件#######################
-fd = open('D:\python\Python34\menu\pro','rb')
+fd = open('E:\github\cloud\S12学习\day1\day1作业\menu\pro', 'rb')
 yaml_dict = yaml.load(fd)
 
 ###############定义全局变量###########################
