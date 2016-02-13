@@ -1,5 +1,5 @@
 # coding=utf-8
-# /usr/bin/env python
+ # /usr/bin/env python
 
 lucky_num = 19
 input_num = -1
