@@ -83,7 +83,69 @@ print(my_dict)
 
 # 四.可命名元组（namedtuple）
 # 根据namedtuple可以创建一个包含tuple所有功能以及其他功能的类型
+# 元组不可以修改
+
+
 import collections
 
-Mytuple = collections.namedtuple('Mytuple', ['x', 'y', 'z'])
-print(Mytuple)
+# 创建类 等同于defaultdict
+MytupleClass = collections.namedtuple('MytupleClass', ['x', 'y', 'z'])
+print(MytupleClass)
+# 查看对象有哪些方法使用(help(MytupleClass))
+print(help(MytupleClass))
+# 创建对象
+obj = MytupleClass(11, 22, 33)
+print(obj.x)
+print(obj.y)
+print(obj.z)
+# 对象都有哪些功能
+# _asdict() 返回一个字符串
+# _replace() 指定值替换成谁
+
+# 五.双向队列（deque）
+# 一个线程安全的双向队列
+# 双向队列可以进可以取
+# 创建双向队列
+d = collections.deque()
+# 方法
+# append()添加
+# appendleft 左边添加
+# clear清空队列
+# count计算某个元素除了多少次
+d.append('1')
+d.appendleft('10')
+d.appendleft('1')
+print(d)
+# 查看1出现了几次，使用count，输出2次
+r = d.count('1')
+print(r)
+# extend扩展
+d.extend(['yy','uu','ii'])
+print(d)
+# extendleft左边扩展
+d.extendleft(['love','you','me'])
+print(d)
+# index取这个值的索引位置
+print(help(d))
+# inster 插入
+# pop取数据
+# popleft左边取
+# remove 删除
+# reverse 反转
+# rotare 从右边那数据插入左边，执行5次操作
+d.rotate(5)
+
+# 单项队列
+# 注：既然有双向队列，也有单项队列（先进先出FIFO)
+# Queue.queue
+
+import queue
+# 创建单项队列
+q = queue.Queue()
+# 插入数据,要加参数
+q.put('123')
+q.put('678')
+# 数据的个数
+print(q.qsize())
+# 放数据，不需要加参数，要按他的单项队列去放
+print(q.get())
