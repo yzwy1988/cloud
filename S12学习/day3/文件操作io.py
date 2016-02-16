@@ -37,4 +37,7 @@ with open('test.log','r') as f:
 # truncate 截取数据,仅保留指定之前数据
 # python3中读取文件read是按字符读取的,seek()指定指针位置是按字节指定的
 
-
+# 读取一个文件,写入另一个文件
+with open("test.log",'r+') as f,open("aaa.txt",'w') as f1:
+    for line in f:
+        f1.write(line)
