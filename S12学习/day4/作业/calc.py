@@ -11,9 +11,9 @@ def get_brackers(string):
 
 
 def kuohao(string):
-    m = re.search("\([\s\d|\.|\+|\-|\*|/|%]*\)", string)
-    if m:
-        return m.group()
+    ap = re.search("\([\s\d|\.|\+|\-|\*|/|%]*\)", string)
+    if ap:
+        return ap.group()
 
 
 def add_sub(arg):
@@ -48,13 +48,14 @@ def result(arg):
 
 
 def main(arg):
+
     brac = get_brackers(arg)
     if brac:
-        m = kuohao(brac)
+        ap = kuohao(brac)
     else:
-        m = re.findall('.*', arg)[0]
-    res = result(m)
-    arg = str(arg).replace(str(m), str(res))
+        ap = re.findall('.*', arg)[0]
+    res = result(ap)
+    arg = str(arg).replace(str(ap), str(res))
     if re.findall('[\+|\*|/|%]+', str(arg)):
         return main(arg)
     return arg
