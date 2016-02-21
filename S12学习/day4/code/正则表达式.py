@@ -53,6 +53,6 @@ s = re.sub('\d+',"/","23maum2in12g90ad2_~2ng3x!")
 s = re.sub('\d+',"/","23maum2in12g90ad2_~2ng3x!",count=2)
 if s:
     print(s)
-
+#  |是或者的意思
 j = re.search("\(.*[\d|\+|\-|*|/|%].*\)","20 * 2 - (9 + 1 * 2 - (29 - 8 / 7)*88/9**8)")
 print(j.group())
