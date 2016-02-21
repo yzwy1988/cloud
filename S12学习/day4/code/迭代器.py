@@ -23,6 +23,12 @@
 
 # 生成器
 # 定义：一个函数调用时返回一个迭代器，那这个函数就叫做生成器（generator），如果函数中包含yield语法，那这个函数就会变成生成器
+# 一个函数调用的时候返回一个迭代器,那这个函数就叫做生成器(generator)
+# yield语法   yield后面的语句还会执行
+
+
+# 调用函数时就要等着函数给返回值
+# yield就是让程序可以中断
 '''
 def cash_out(amount):
     while amount > 0:
@@ -32,6 +38,7 @@ def cash_out(amount):
 #传给函数实参 cash_out(5)
 atm = cash_out(5)
 print("取到钱%s万" % atm.__next__())
+# 执行第一个print时,执行到函数中的yield后,返回执行下一个print,第二个执行时接着执行yield下面的print语句,执行完后在执行函数
 print("花掉花掉！")
 print("取到钱 %s 万" %atm.__next__())
 print("取到钱 %s 万" %atm.__next__())
@@ -69,24 +76,37 @@ print("取到钱 %s 万" %atm.__next__())'''
 
 # 另外，还可以通过yield实现在单线程的情况下实现并发运算的效果
 
+
+
+
+# 生产者消费者模型
+# 例如: 一个做包子, 两个吃包子
+# 首先定义一个吃包子
+# send语法,把一个值发送给另一个函数
+# yield可以返回值,也可以接收值
+# 异步示例:
 import time
-def consumer(name):         #第五步
-    print("%s 准备吃包子啦！"%name)
+
+
+def consumer(name):  # 第五步
+    print("%s 准备吃包子啦！" % name)
     while True:
         baozi = yield
 
         print("包子[%s]来了，被[%s]吃了" % (baozi, name))
 
-def producer(name):         # 第一步
-    c = consumer("A")        #第二步调用consumer函数，并把函数返回值传给c
-    c2 = consumer("B")      #第三步调用consumer函数，并把函数返回值传给c
-    c.__next__()            #第四步执行生成器步骤
+
+def producer(name):  # 第一步
+    c = consumer("A")  # 第二步调用consumer函数，并把函数返回值传给c
+    c2 = consumer("B")  # 第三步调用consumer函数，并把函数返回值传给c
+    c.__next__()  # 第四步执行生成器步骤
     c2.__next__()
     print("老子开始准备做包子啦！")
     for i in range(10):
         time.sleep(1)
         print("做了2个包子！")
-        c.send(i)
+        c.send(i)   # send方法,把A和0传给包子
         c2.send(i)
 
-producer("alex")    # 调用producer函数传人实参
+
+producer("alex")  # 调用producer函数传人实参
